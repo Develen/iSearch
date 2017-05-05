@@ -6,7 +6,7 @@ class Request {
     
     static func getURLPath(queryTerm: String) -> URLRequest {
         let encodedQueryTerm = queryTerm.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        var request = URLRequest(url: URL(string: "\(baseURL)?\(encodedQueryTerm)&\(mediaType)")!)
+        var request = URLRequest(url: URL(string: "\(baseURL)?term=\(encodedQueryTerm)&\(mediaType)")!)
         request.httpMethod = "GET"
         return request
     }

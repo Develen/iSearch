@@ -22,6 +22,7 @@
 		F38C2A751EBCED20009D3BC0 /* ITunesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */; };
 		F38C2A771EBCF537009D3BC0 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A761EBCF537009D3BC0 /* ErrorType.swift */; };
 		F38C2A791EBD088F009D3BC0 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */; };
+		F38C2A7B1EBD0E1E009D3BC0 /* CellITunesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesParser.swift; sourceTree = "<group>"; };
 		F38C2A761EBCF537009D3BC0 /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellITunesEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				F38C2A6E1EBCEADA009D3BC0 /* ITunesEntity.swift */,
 				F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */,
 				F38C2A761EBCF537009D3BC0 /* ErrorType.swift */,
+				F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */,
 				F3391E2E1EBB963400A6BB50 /* Main.storyboard */,
 				F3391E311EBB963400A6BB50 /* Assets.xcassets */,
 				F3391E331EBB963400A6BB50 /* LaunchScreen.storyboard */,
@@ -301,6 +304,7 @@
 				F38C2A751EBCED20009D3BC0 /* ITunesParser.swift in Sources */,
 				F3391E5E1EBBA72D00A6BB50 /* APIResult.swift in Sources */,
 				F3391E5A1EBB96A500A6BB50 /* Request.swift in Sources */,
+				F38C2A7B1EBD0E1E009D3BC0 /* CellITunesEntity.swift in Sources */,
 				F3391E2B1EBB963400A6BB50 /* AppDelegate.swift in Sources */,
 				F3391E5C1EBBA1F300A6BB50 /* APIClient.swift in Sources */,
 				F3391E601EBBAD5400A6BB50 /* CurrentAPIClient.swift in Sources */,
