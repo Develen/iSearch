@@ -4,12 +4,12 @@ protocol APIClient {
     var configuration: URLSessionConfiguration {get}
     var session: URLSession {get}
     
-    func JSONTaskWithRequest(request: URLRequest, completion: (NSDictionary?, HTTPURLResponse?, Error?) -> Void) -> URLSessionDataTask?
-    func fetch<T>(request: URLRequest, parse: (NSDictionary) -> T?, completion: (APIResult<T>) -> Void)
+    func dataTaskWithRequest(request: URLRequest, completion: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) -> URLSessionDataTask?
+    func fetch<T>(request: URLRequest, parse: @escaping (Data) throws -> T?, completion: @escaping (APIResult<T>) -> Void)
 }
 
 extension APIClient {
-    func JSONTaskWithRequest (request: URLRequest, completion: @escaping (NSDictionary?, HTTPURLResponse?, Error?) -> Void) -> URLSessionDataTask? {
+    func dataTaskWithRequest (request: URLRequest, completion: @escaping (Data?, HTTPURLResponse?, Error?) -> Void) -> URLSessionDataTask? {
         let task = session.dataTask(with: request) {
             (data, response, error) in
             guard let HTTPResponse = response as? HTTPURLResponse else {
@@ -21,35 +21,40 @@ extension APIClient {
             } else {
                 switch HTTPResponse.statusCode {
                 case 200:
-                    do {
-                        let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary
-                        completion(json, HTTPResponse, nil)
-                    } catch let error as NSError {
-                        completion(nil, HTTPResponse, error)
-                    }
-                default: break
+                    completion(data, HTTPResponse, nil)
+                default:
+                    completion(nil, HTTPResponse, error)
                 }
             }
         }
         return task
     }
     
-    func fetch<T>(request: URLRequest, parse: @escaping (NSDictionary) -> T?, completion: @escaping (APIResult<T>) -> Void) {
-        let task = JSONTaskWithRequest(request: request) {
+    func fetch<T>(request: URLRequest, parse: @escaping (Data) throws -> T?, completion: @escaping (APIResult<T>) -> Void) {
+        let task = dataTaskWithRequest(request: request) {
             (json, response, error) in
             DispatchQueue.main.async {
-                guard let json = json else {
-                    completion(APIResult.NoInternetConnection)
+                guard response != nil else {
+                    completion(APIResult.noInternetConnection)
                     return
                 }
-                let value = parse(json)
-                if value == nil {
-                    completion(APIResult.Failure(error!))
-                } else {
-                    completion(APIResult.Success(value))
+                guard let json = json else {
+                   completion(APIResult.failure(error!))
+                    return
+                }
+                do {
+                    let value = try parse(json)
+                    completion(APIResult.success(value!))
+                } catch ErrorType.invalidJSON {
+                    completion(APIResult.invalidJSON)
+                } catch ErrorType.unexpectedJSONContent {
+                    completion(APIResult.unexpectedJSONContent)
+                } catch let error as NSError {
+                    completion(APIResult.failure(error))
                 }
             }
         }
         task!.resume()
     }
+
 }

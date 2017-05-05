@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  iSearch
-//
-//  Created by Elena Tsvetkova on 04/05/2017.
-//  Copyright © 2017 Elena Tsvetkova. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

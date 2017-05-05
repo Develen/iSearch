@@ -1,7 +1,9 @@
 import Foundation
 
 enum APIResult<T> {
-    case Success(T?)
-    case Failure(Error)
-    case NoInternetConnection
+    case success(T)
+    case failure(Error)
+    case noInternetConnection
+    case invalidJSON
+    case unexpectedJSONContent
 }
