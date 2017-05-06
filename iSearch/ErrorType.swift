@@ -3,4 +3,5 @@ import Foundation
 enum ErrorType: Error {
     case invalidJSON
     case unexpectedJSONContent
+    case noInternetConnection
 }

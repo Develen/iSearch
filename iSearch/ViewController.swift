@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchResult.delegate = self
         searchResult.dataSource = self
         ApplicationManager.sharedInstance.gotCurrentITunesEntity = gotCurrentITunesEntity
+        ApplicationManager.sharedInstance.gotError = showAlert
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let data = try? Data(contentsOf: url) {
                     DispatchQueue.main.async {
                         cell.picture.image = UIImage(data: data)!
-                    }
+}
                 } else {
                     DispatchQueue.main.async {
                         cell.picture.image = UIImage(named: "defaultImage")
@@ -69,13 +70,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchResult.reloadData()
     }
     
-//    private func showAlert(text: String, error: Error?) {
-//        let alert = UIAlertController(title: "Oops", message: text, preferredStyle: .alert)
-//        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
-//        let action2 = UIAlertAction(title: "Try Again", style: .default, handler:
-//            action in
-//            
-//            <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
-//    }
+    private func showAlert(error: Error) {
+        var messageError = ""
+        var actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)]
+        switch error {
+        case ErrorType.noInternetConnection:
+            messageError = "No internet connection"
+            actions.append(UIAlertAction(title: "Try Again", style: .default, handler: {
+                action in
+                ApplicationManager.sharedInstance.start(queryTerm: self.searchText.text!)
+            }))
+        case ErrorType.invalidJSON:
+            messageError = "Invalid JSON"
+        case ErrorType.unexpectedJSONContent:
+            messageError = "Unexpected JSON content"
+        default:
+            messageError = "\(error.localizedDescription)"
+        }
+        let alert = UIAlertController(title: "Oops!", message: messageError, preferredStyle: .alert)
+        for action in actions {
+            alert.addAction(action)
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
