@@ -31,11 +31,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchResult.dequeueReusableCell(withIdentifier: "iTunesEntityCell") as! CellITunesEntity
         cell.trackName.text = searchResultOfITunesEntity[indexPath.row].trackName
-        if let url = URL(string: searchResultOfITunesEntity[indexPath.row].image) {
-            if let data = try? Data(contentsOf: url) {
-                cell.picture.image = UIImage(data: data)!
-            } else {
-           //TODO: default picture
+        cell.artistName.text = searchResultOfITunesEntity[indexPath.row].artistName
+        let queue = DispatchQueue.global(qos: .utility)
+        queue.async{
+            if let url = URL(string: self.searchResultOfITunesEntity[indexPath.row].image) {
+                if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        cell.picture.image = UIImage(data: data)!
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        cell.picture.image = UIImage(named: "defaultImage")
+                    }
+                }
             }
         }
         return cell
@@ -51,7 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let newText: NSString = currentText.replacingCharacters(in: range, with: text) as NSString
         return newText.length <= maxQueryLength
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -60,5 +68,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchResultOfITunesEntity = data
         searchResult.reloadData()
     }
+    
+//    private func showAlert(text: String, error: Error?) {
+//        let alert = UIAlertController(title: "Oops", message: text, preferredStyle: .alert)
+//        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+//        let action2 = UIAlertAction(title: "Try Again", style: .default, handler:
+//            action in
+//            
+//            <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>)
+//    }
 }
 

@@ -1,9 +1,10 @@
 import Foundation
 
 class ITunesParser {
-    private static  let iTunesResultKey = "results"
-    private static  let firstITunesKeyToFillResult = "trackName"
-    private static  let secondITunesKeyToFillResult = "artworkUrl60"
+    private static let iTunesResultKey = "results"
+    private static let firstITunesKeyToFillResult = "trackName"
+    private static let secondITunesKeyToFillResult = "artworkUrl60"
+    private static let thirdITunesKeyToFillResult = "artistName"
     
     static func parseJSON(json: Data) throws -> [ITunesEntity] {
         var iTunesEntity: NSDictionary?
@@ -24,11 +25,12 @@ class ITunesParser {
         }
         for oneContent in iTunesContent {
             guard let trackName = oneContent[ITunesParser.firstITunesKeyToFillResult],
-                let image = oneContent[ITunesParser.secondITunesKeyToFillResult] else {
+                let image = oneContent[ITunesParser.secondITunesKeyToFillResult],
+            let artistName = oneContent[ITunesParser.thirdITunesKeyToFillResult] else {
                     continue
                     //TODO: log error massage
             }
-            iTunesEntity.append(ITunesEntity(trackName: trackName as! String, image: image as! String))
+            iTunesEntity.append(ITunesEntity(trackName: trackName as! String, image: image as! String, artistName: artistName as! String))
         }
         return iTunesEntity
     }
