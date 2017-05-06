@@ -2,8 +2,16 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     private let maxQueryLength = 60
+    private let borderColorOfTextView = UIColor(red: 78/255, green: 122/255, blue: 175/225, alpha: 1.0)
+    private let borderWidthOFTextView: CGFloat = 1.0
     private var searchResultOfITunesEntity: [ITunesEntity] = []
-    
+    private let titleAlert = "Oops!"
+    private let okALertAction = "OK"
+    private let tryAgainAlertAction = "Try again"
+    private let noInternetMessage = "No internet connection"
+    private let invalidJSONMessage = "Invalid JSON"
+    private let unexpectedJSONContentMessage = "Unexpected JSON Content"
+
     @IBOutlet weak var searchText: UITextView!
     @IBOutlet weak var searchResult: UITableView!
     
@@ -11,10 +19,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         searchText.delegate = self
         searchText.text = ""
+        searchText.layer.borderColor = borderColorOfTextView.cgColor
+        searchText.layer.borderWidth = borderWidthOFTextView
         searchResult.delegate = self
         searchResult.dataSource = self
         ApplicationManager.sharedInstance.gotCurrentITunesEntity = gotCurrentITunesEntity
         ApplicationManager.sharedInstance.gotError = showAlert
+    }
+    
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .all
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,22 +86,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func showAlert(error: Error) {
         var messageError = ""
-        var actions: [UIAlertAction] = [UIAlertAction(title: "Ok", style: .default, handler: nil)]
+        var actions: [UIAlertAction] = [UIAlertAction(title: okALertAction, style: .default, handler: nil)]
+
         switch error {
-        case ErrorType.noInternetConnection:
-            messageError = "No internet connection"
-            actions.append(UIAlertAction(title: "Try Again", style: .default, handler: {
+        case ErrorList.noInternetConnection:
+            messageError = noInternetMessage
+            actions.append(UIAlertAction(title: tryAgainAlertAction, style: .default, handler: {
                 action in
                 ApplicationManager.sharedInstance.start(queryTerm: self.searchText.text!)
             }))
-        case ErrorType.invalidJSON:
-            messageError = "Invalid JSON"
-        case ErrorType.unexpectedJSONContent:
-            messageError = "Unexpected JSON content"
+        case ErrorList.invalidJSON:
+            messageError = invalidJSONMessage
+        case ErrorList.unexpectedJSONContent:
+            messageError = unexpectedJSONContentMessage
         default:
             messageError = "\(error.localizedDescription)"
         }
-        let alert = UIAlertController(title: "Oops!", message: messageError, preferredStyle: .alert)
+        let alert = UIAlertController(title: titleAlert, message: messageError, preferredStyle: .alert)
         for action in actions {
             alert.addAction(action)
         }

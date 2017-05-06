@@ -1,6 +1,6 @@
 import Foundation
 
-enum ErrorType: Error {
+enum ErrorList: Error {
     case invalidJSON
     case unexpectedJSONContent
     case noInternetConnection

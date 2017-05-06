@@ -35,7 +35,7 @@ extension APIClient {
             (json, response, error) in
             DispatchQueue.main.async {
                 guard response != nil else {
-                    completion(APIResult.failure(ErrorType.noInternetConnection))
+                    completion(APIResult.failure(ErrorList.noInternetConnection))
                     return
                 }
                 guard let json = json else {

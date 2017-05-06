@@ -18,9 +18,15 @@
 		F3391E5C1EBBA1F300A6BB50 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3391E5B1EBBA1F300A6BB50 /* APIClient.swift */; };
 		F3391E5E1EBBA72D00A6BB50 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3391E5D1EBBA72D00A6BB50 /* APIResult.swift */; };
 		F3391E601EBBAD5400A6BB50 /* CurrentAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3391E5F1EBBAD5400A6BB50 /* CurrentAPIClient.swift */; };
+		F36547B81EBDFBE00088BD02 /* ITunesParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36547B71EBDFBE00088BD02 /* ITunesParserTest.swift */; };
+		F36547C51EBE0D9F0088BD02 /* validJSON_ThreeEntities.json in Resources */ = {isa = PBXBuildFile; fileRef = F36547C41EBE0D9F0088BD02 /* validJSON_ThreeEntities.json */; };
+		F36548031EBE34EF0088BD02 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36548021EBE34EF0088BD02 /* TestError.swift */; };
+		F36548051EBE3ADC0088BD02 /* invalidJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = F36548041EBE3ADC0088BD02 /* invalidJSON.json */; };
+		F36548071EBE47730088BD02 /* ErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36548061EBE47730088BD02 /* ErrorList.swift */; };
+		F365480B1EBE492F0088BD02 /* invalidJSONParentContent.json in Resources */ = {isa = PBXBuildFile; fileRef = F365480A1EBE492F0088BD02 /* invalidJSONParentContent.json */; };
+		F365480D1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = F365480C1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json */; };
 		F38C2A6F1EBCEADA009D3BC0 /* ITunesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A6E1EBCEADA009D3BC0 /* ITunesEntity.swift */; };
 		F38C2A751EBCED20009D3BC0 /* ITunesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */; };
-		F38C2A771EBCF537009D3BC0 /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A761EBCF537009D3BC0 /* ErrorType.swift */; };
 		F38C2A791EBD088F009D3BC0 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */; };
 		F38C2A7B1EBD0E1E009D3BC0 /* CellITunesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */; };
 /* End PBXBuildFile section */
@@ -60,9 +66,15 @@
 		F3391E5B1EBBA1F300A6BB50 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F3391E5D1EBBA72D00A6BB50 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
 		F3391E5F1EBBAD5400A6BB50 /* CurrentAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentAPIClient.swift; sourceTree = "<group>"; };
+		F36547B71EBDFBE00088BD02 /* ITunesParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesParserTest.swift; sourceTree = "<group>"; };
+		F36547C41EBE0D9F0088BD02 /* validJSON_ThreeEntities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = validJSON_ThreeEntities.json; sourceTree = "<group>"; };
+		F36548021EBE34EF0088BD02 /* TestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
+		F36548041EBE3ADC0088BD02 /* invalidJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalidJSON.json; sourceTree = "<group>"; };
+		F36548061EBE47730088BD02 /* ErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorList.swift; sourceTree = "<group>"; };
+		F365480A1EBE492F0088BD02 /* invalidJSONParentContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalidJSONParentContent.json; sourceTree = "<group>"; };
+		F365480C1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = incorrectJSONTORecoeveSearchResult.json; sourceTree = "<group>"; };
 		F38C2A6E1EBCEADA009D3BC0 /* ITunesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesEntity.swift; sourceTree = "<group>"; };
 		F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesParser.swift; sourceTree = "<group>"; };
-		F38C2A761EBCF537009D3BC0 /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellITunesEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +133,7 @@
 				F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */,
 				F38C2A6E1EBCEADA009D3BC0 /* ITunesEntity.swift */,
 				F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */,
-				F38C2A761EBCF537009D3BC0 /* ErrorType.swift */,
+				F36548061EBE47730088BD02 /* ErrorList.swift */,
 				F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */,
 				F3391E2E1EBB963400A6BB50 /* Main.storyboard */,
 				F3391E311EBB963400A6BB50 /* Assets.xcassets */,
@@ -134,7 +146,10 @@
 		F3391E3E1EBB963400A6BB50 /* iSearchTests */ = {
 			isa = PBXGroup;
 			children = (
+				F36547C11EBE0D340088BD02 /* ResourcesTestJSONParsing */,
 				F3391E3F1EBB963400A6BB50 /* iSearchTests.swift */,
+				F36547B71EBDFBE00088BD02 /* ITunesParserTest.swift */,
+				F36548021EBE34EF0088BD02 /* TestError.swift */,
 				F3391E411EBB963400A6BB50 /* Info.plist */,
 			);
 			path = iSearchTests;
@@ -158,6 +173,17 @@
 				F3391E5F1EBBAD5400A6BB50 /* CurrentAPIClient.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		F36547C11EBE0D340088BD02 /* ResourcesTestJSONParsing */ = {
+			isa = PBXGroup;
+			children = (
+				F36547C41EBE0D9F0088BD02 /* validJSON_ThreeEntities.json */,
+				F36548041EBE3ADC0088BD02 /* invalidJSON.json */,
+				F365480A1EBE492F0088BD02 /* invalidJSONParentContent.json */,
+				F365480C1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json */,
+			);
+			name = ResourcesTestJSONParsing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36547C51EBE0D9F0088BD02 /* validJSON_ThreeEntities.json in Resources */,
+				F36548051EBE3ADC0088BD02 /* invalidJSON.json in Resources */,
+				F365480B1EBE492F0088BD02 /* invalidJSONParentContent.json in Resources */,
+				F365480D1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36548071EBE47730088BD02 /* ErrorList.swift in Sources */,
 				F38C2A6F1EBCEADA009D3BC0 /* ITunesEntity.swift in Sources */,
-				F38C2A771EBCF537009D3BC0 /* ErrorType.swift in Sources */,
 				F38C2A791EBD088F009D3BC0 /* ApplicationManager.swift in Sources */,
 				F3391E2D1EBB963400A6BB50 /* ViewController.swift in Sources */,
 				F38C2A751EBCED20009D3BC0 /* ITunesParser.swift in Sources */,
@@ -315,6 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36548031EBE34EF0088BD02 /* TestError.swift in Sources */,
+				F36547B81EBDFBE00088BD02 /* ITunesParserTest.swift in Sources */,
 				F3391E401EBB963400A6BB50 /* iSearchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

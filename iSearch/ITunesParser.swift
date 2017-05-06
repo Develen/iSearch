@@ -12,7 +12,7 @@ class ITunesParser {
         do {
             iTunesEntity = try JSONSerialization.jsonObject(with: json, options: []) as? NSDictionary
         } catch {
-            throw ErrorType.invalidJSON
+            throw ErrorList.invalidJSON
         }
         return try parseITunesEntity(content: iTunesEntity!)
     }
@@ -21,12 +21,12 @@ class ITunesParser {
         var iTunesEntity: [ITunesEntity] = []
         
         guard let iTunesContent = content[ITunesParser.iTunesResultKey] as? [NSDictionary] else {
-         throw ErrorType.unexpectedJSONContent
+            throw ErrorList.unexpectedJSONContent
         }
         for oneContent in iTunesContent {
             guard let trackName = oneContent[ITunesParser.firstITunesKeyToFillResult],
                 let image = oneContent[ITunesParser.secondITunesKeyToFillResult],
-            let artistName = oneContent[ITunesParser.thirdITunesKeyToFillResult] else {
+                let artistName = oneContent[ITunesParser.thirdITunesKeyToFillResult] else {
                     continue
                     //TODO: log error massage
             }
