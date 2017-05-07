@@ -1,6 +1,8 @@
-"alertTitle" = "Oops!";
+"errorAlertTitle" = "Oops!";
 "okAction" = "OK";
 "tryAgainAction" = "Try again";
 "invalidJSON" = "Invalid JSON";
 "webserviceError" = "Error on calling iTunes web service";
 "unexpectedJSONContent" = "Unexpected JSON Content";
+"titleAlertEmptyResult" = "Sorry";
+"messageEmptyResult" = "Nothing found";

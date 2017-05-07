@@ -1,6 +1,8 @@
-"alertTitle" = "Ошибка!";
+"errorAlertTitle" = "Ошибка!";
 "okAction" = "ОК";
 "tryAgainAction" = "Повтор";
 "invalidJSON" = "Некорректный JSON формат";
 "webserviceError" = "Ошибка при запросе веб сервиса iTunes";
 "unexpectedJSONContent" = "Невозможно получить данные из JSON";
+"titleAlertEmptyResult" = "Извините";
+"messageEmptyResult" = "По Вашему запросу ничего не найдено";

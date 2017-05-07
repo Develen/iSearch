@@ -71,12 +71,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func gotCurrentITunesEntity(data: [ITunesEntity]) {
+        if data.isEmpty {
+            self.showAlertEmtryResult()
+        }
         searchResultOfITunesEntity = data
         searchResult.reloadData()
     }
     
     private func showAlert(error: Error) {
-
+        searchResultOfITunesEntity = []
+        searchResult.reloadData()
+        
         var messageError = ""
         var actions: [UIAlertAction] = [UIAlertAction(title: UIConstant.okALertAction, style: .default, handler: nil)]
         
@@ -95,10 +100,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         default:
             messageError = "\(error.localizedDescription)"
         }
-        let alert = UIAlertController(title: UIConstant.titleAlert, message: messageError, preferredStyle: .alert)
+        let alert = UIAlertController(title: UIConstant.errorTitleAlert, message: messageError, preferredStyle: .alert)
         for action in actions {
             alert.addAction(action)
         }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func showAlertEmtryResult() {
+        let alert = UIAlertController(title: UIConstant.titleAlertEmptyResult, message: UIConstant.messageEmptyResult, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: UIConstant.okALertAction, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }
