@@ -2,24 +2,21 @@
     "resultCount": 3,
     "results":    [
                    {
-                   "artitName": "Name1",
+                   "incorrectArtistNameField": "Name1",
                    "trackName": "Track1",
-                   "artworkUrl60": "ImageURL1",
+                   "artworkUrl100": "ImageURL1",
                    "someOtherField": 6.99
-                   
                    },
                    {
-                   
-                   "artitName": "Name2",
+                   "incorrectArtistNameField": "Name2",
                    "trackName": "Track2",
-                   "artworkUrl60": "ImageURL2",
+                   "artworkUrl100": "ImageURL2",
                    "someOtherField": "Rock"
                    },
-                   {
-                   
-                   "artitName": "Name3",
+                   {                   
+                   "incorrectArtistNameField": "Name3",
                    "trackName": "Track3",
-                   "artworkUrl60": "ImageURL3",
+                   "artworkUrl100": "ImageURL3",
                    "someOtherField": "Rock"
                    }
                    ]

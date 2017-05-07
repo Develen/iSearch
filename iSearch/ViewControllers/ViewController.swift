@@ -76,8 +76,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func showAlert(error: Error) {
-        
-        
+
         var messageError = ""
         var actions: [UIAlertAction] = [UIAlertAction(title: UIConstant.okALertAction, style: .default, handler: nil)]
         

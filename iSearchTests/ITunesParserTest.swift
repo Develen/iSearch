@@ -26,11 +26,10 @@ class ITunesParserTest: XCTestCase {
     }
     
     func test_parseJSON_invalidJSONFormat_ThrowErrorInvalidJSON() throws {
-        var entities: [ITunesEntity]? = nil
         var error : Error? = nil
         let data = try readFileContent(name: "invalidJSON", fileExtension: "json")
         do {
-            entities = try ITunesParser.parseJSON(json: data as Data)
+            try ITunesParser.parseJSON(json: data as Data)
         } catch let currentError as NSError {
             error = currentError
         }
@@ -38,11 +37,10 @@ class ITunesParserTest: XCTestCase {
     }
     
     func test_parseJSON_invalidJSONParentContent_ThrowErrorUnexpectedJSONContent() throws {
-        var entities: [ITunesEntity]? = nil
         var error : Error? = nil
         let data = try readFileContent(name: "invalidJSONParentContent", fileExtension: "json")
         do {
-            entities = try ITunesParser.parseJSON(json: data as Data)
+            try ITunesParser.parseJSON(json: data as Data)
         } catch let currentError as NSError {
             error = currentError
         }
@@ -59,6 +57,7 @@ class ITunesParserTest: XCTestCase {
             error = currentError
         }
         XCTAssert(entities?.count == 0 , "no keys to fill array with objects of ITunesEntity")
+        XCTAssertNil(error, "should be no error")
     }
     
     private func readFileContent(name: String, fileExtension: String) throws -> NSData {

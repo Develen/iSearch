@@ -4,22 +4,19 @@
                    {
                    "artistName": "Name1",
                    "trackName": "Track1",
-                   "artworkUrl60": "ImageURL1",
+                   "artworkUrl100": "ImageURL1",
                    "someOtherField": 6.99
-                   
                    },
                    {
-                   
                    "artistName": "Name2",
                    "trackName": "Track2",
-                   "artworkUrl60": "ImageURL2",
+                   "artworkUrl100": "ImageURL2",
                    "someOtherField": "Rock"
                    },
                    {
-                   
                    "artistName": "Name3",
                    "trackName": "Track3",
-                   "artworkUrl60": "ImageURL3",
+                   "artworkUrl100": "ImageURL3",
                    "someOtherField": "Rock"
                    }
                    ]
