@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F32EDB391EBF2B790086082D /* JSONParsingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EDB381EBF2B790086082D /* JSONParsingConstant.swift */; };
+		F32EDB3B1EBF2BBD0086082D /* URLRequestConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EDB3A1EBF2BBD0086082D /* URLRequestConstant.swift */; };
+		F32EDB3D1EBF2BEC0086082D /* UIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32EDB3C1EBF2BEC0086082D /* UIConstant.swift */; };
 		F3391E2B1EBB963400A6BB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3391E2A1EBB963400A6BB50 /* AppDelegate.swift */; };
 		F3391E2D1EBB963400A6BB50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3391E2C1EBB963400A6BB50 /* ViewController.swift */; };
 		F3391E301EBB963400A6BB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3391E2E1EBB963400A6BB50 /* Main.storyboard */; };
@@ -22,9 +25,11 @@
 		F36547C51EBE0D9F0088BD02 /* validJSON_ThreeEntities.json in Resources */ = {isa = PBXBuildFile; fileRef = F36547C41EBE0D9F0088BD02 /* validJSON_ThreeEntities.json */; };
 		F36548031EBE34EF0088BD02 /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36548021EBE34EF0088BD02 /* TestError.swift */; };
 		F36548051EBE3ADC0088BD02 /* invalidJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = F36548041EBE3ADC0088BD02 /* invalidJSON.json */; };
-		F36548071EBE47730088BD02 /* ErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36548061EBE47730088BD02 /* ErrorList.swift */; };
 		F365480B1EBE492F0088BD02 /* invalidJSONParentContent.json in Resources */ = {isa = PBXBuildFile; fileRef = F365480A1EBE492F0088BD02 /* invalidJSONParentContent.json */; };
 		F365480D1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json in Resources */ = {isa = PBXBuildFile; fileRef = F365480C1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json */; };
+		F385F6421EBF093E00D1472A /* JSONParsingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385F6411EBF093E00D1472A /* JSONParsingError.swift */; };
+		F385F6441EBF094E00D1472A /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F385F6431EBF094E00D1472A /* APIError.swift */; };
+		F385F64D1EBF152200D1472A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F385F64B1EBF152200D1472A /* Localizable.strings */; };
 		F38C2A6F1EBCEADA009D3BC0 /* ITunesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A6E1EBCEADA009D3BC0 /* ITunesEntity.swift */; };
 		F38C2A751EBCED20009D3BC0 /* ITunesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */; };
 		F38C2A791EBD088F009D3BC0 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */; };
@@ -49,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F32EDB381EBF2B790086082D /* JSONParsingConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsingConstant.swift; sourceTree = "<group>"; };
+		F32EDB3A1EBF2BBD0086082D /* URLRequestConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestConstant.swift; sourceTree = "<group>"; };
+		F32EDB3C1EBF2BEC0086082D /* UIConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstant.swift; sourceTree = "<group>"; };
 		F3391E271EBB963400A6BB50 /* iSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3391E2A1EBB963400A6BB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3391E2C1EBB963400A6BB50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,9 +78,14 @@
 		F36547C41EBE0D9F0088BD02 /* validJSON_ThreeEntities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = validJSON_ThreeEntities.json; sourceTree = "<group>"; };
 		F36548021EBE34EF0088BD02 /* TestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		F36548041EBE3ADC0088BD02 /* invalidJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalidJSON.json; sourceTree = "<group>"; };
-		F36548061EBE47730088BD02 /* ErrorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorList.swift; sourceTree = "<group>"; };
 		F365480A1EBE492F0088BD02 /* invalidJSONParentContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalidJSONParentContent.json; sourceTree = "<group>"; };
 		F365480C1EBE4A4D0088BD02 /* incorrectJSONTORecoeveSearchResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = incorrectJSONTORecoeveSearchResult.json; sourceTree = "<group>"; };
+		F385F6411EBF093E00D1472A /* JSONParsingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsingError.swift; sourceTree = "<group>"; };
+		F385F6431EBF094E00D1472A /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F385F6491EBF14D600D1472A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		F385F64A1EBF14D600D1472A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F385F64C1EBF152200D1472A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F385F64E1EBF159200D1472A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F38C2A6E1EBCEADA009D3BC0 /* ITunesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesEntity.swift; sourceTree = "<group>"; };
 		F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITunesParser.swift; sourceTree = "<group>"; };
 		F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
@@ -104,6 +117,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F32EDB361EBF29E30086082D /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F385F6411EBF093E00D1472A /* JSONParsingError.swift */,
+				F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		F32EDB371EBF2A2C0086082D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F32EDB381EBF2B790086082D /* JSONParsingConstant.swift */,
+				F32EDB3A1EBF2BBD0086082D /* URLRequestConstant.swift */,
+				F32EDB3C1EBF2BEC0086082D /* UIConstant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		F3391E1E1EBB963400A6BB50 = {
 			isa = PBXGroup;
 			children = (
@@ -127,18 +159,19 @@
 		F3391E291EBB963400A6BB50 /* iSearch */ = {
 			isa = PBXGroup;
 			children = (
-				F3391E2A1EBB963400A6BB50 /* AppDelegate.swift */,
-				F3391E581EBB967700A6BB50 /* API */,
 				F3391E2C1EBB963400A6BB50 /* ViewController.swift */,
+				F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */,
 				F38C2A781EBD088F009D3BC0 /* ApplicationManager.swift */,
 				F38C2A6E1EBCEADA009D3BC0 /* ITunesEntity.swift */,
-				F38C2A741EBCED20009D3BC0 /* ITunesParser.swift */,
-				F36548061EBE47730088BD02 /* ErrorList.swift */,
-				F38C2A7A1EBD0E1E009D3BC0 /* CellITunesEntity.swift */,
+				F3391E2A1EBB963400A6BB50 /* AppDelegate.swift */,
+				F32EDB361EBF29E30086082D /* Parser */,
+				F3391E581EBB967700A6BB50 /* API */,
+				F32EDB371EBF2A2C0086082D /* Constants */,
 				F3391E2E1EBB963400A6BB50 /* Main.storyboard */,
 				F3391E311EBB963400A6BB50 /* Assets.xcassets */,
 				F3391E331EBB963400A6BB50 /* LaunchScreen.storyboard */,
 				F3391E361EBB963400A6BB50 /* Info.plist */,
+				F385F64B1EBF152200D1472A /* Localizable.strings */,
 			);
 			path = iSearch;
 			sourceTree = "<group>";
@@ -171,8 +204,9 @@
 				F3391E5B1EBBA1F300A6BB50 /* APIClient.swift */,
 				F3391E5D1EBBA72D00A6BB50 /* APIResult.swift */,
 				F3391E5F1EBBAD5400A6BB50 /* CurrentAPIClient.swift */,
+				F385F6431EBF094E00D1472A /* APIError.swift */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		F36547C11EBE0D340088BD02 /* ResourcesTestJSONParsing */ = {
@@ -278,6 +312,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = F3391E1E1EBB963400A6BB50;
 			productRefGroup = F3391E281EBB963400A6BB50 /* Products */;
@@ -297,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3391E351EBB963400A6BB50 /* LaunchScreen.storyboard in Resources */,
+				F385F64D1EBF152200D1472A /* Localizable.strings in Resources */,
 				F3391E321EBB963400A6BB50 /* Assets.xcassets in Resources */,
 				F3391E301EBB963400A6BB50 /* Main.storyboard in Resources */,
 			);
@@ -327,17 +363,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F36548071EBE47730088BD02 /* ErrorList.swift in Sources */,
 				F38C2A6F1EBCEADA009D3BC0 /* ITunesEntity.swift in Sources */,
 				F38C2A791EBD088F009D3BC0 /* ApplicationManager.swift in Sources */,
 				F3391E2D1EBB963400A6BB50 /* ViewController.swift in Sources */,
+				F32EDB3D1EBF2BEC0086082D /* UIConstant.swift in Sources */,
 				F38C2A751EBCED20009D3BC0 /* ITunesParser.swift in Sources */,
 				F3391E5E1EBBA72D00A6BB50 /* APIResult.swift in Sources */,
 				F3391E5A1EBB96A500A6BB50 /* Request.swift in Sources */,
+				F32EDB391EBF2B790086082D /* JSONParsingConstant.swift in Sources */,
+				F32EDB3B1EBF2BBD0086082D /* URLRequestConstant.swift in Sources */,
 				F38C2A7B1EBD0E1E009D3BC0 /* CellITunesEntity.swift in Sources */,
 				F3391E2B1EBB963400A6BB50 /* AppDelegate.swift in Sources */,
+				F385F6421EBF093E00D1472A /* JSONParsingError.swift in Sources */,
 				F3391E5C1EBBA1F300A6BB50 /* APIClient.swift in Sources */,
 				F3391E601EBBAD5400A6BB50 /* CurrentAPIClient.swift in Sources */,
+				F385F6441EBF094E00D1472A /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +419,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F3391E2F1EBB963400A6BB50 /* Base */,
+				F385F6491EBF14D600D1472A /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -387,8 +428,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				F3391E341EBB963400A6BB50 /* Base */,
+				F385F64A1EBF14D600D1472A /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F385F64B1EBF152200D1472A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F385F64C1EBF152200D1472A /* Base */,
+				F385F64E1EBF159200D1472A /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -398,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -447,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

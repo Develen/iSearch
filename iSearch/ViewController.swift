@@ -1,17 +1,8 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
-    private let maxQueryLength = 60
-    private let borderColorOfTextView = UIColor(red: 78/255, green: 122/255, blue: 175/225, alpha: 1.0)
-    private let borderWidthOFTextView: CGFloat = 1.0
     private var searchResultOfITunesEntity: [ITunesEntity] = []
-    private let titleAlert = "Oops!"
-    private let okALertAction = "OK"
-    private let tryAgainAlertAction = "Try again"
-    private let noInternetMessage = "No internet connection"
-    private let invalidJSONMessage = "Invalid JSON"
-    private let unexpectedJSONContentMessage = "Unexpected JSON Content"
-
+    
     @IBOutlet weak var searchText: UITextView!
     @IBOutlet weak var searchResult: UITableView!
     
@@ -19,8 +10,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         searchText.delegate = self
         searchText.text = ""
-        searchText.layer.borderColor = borderColorOfTextView.cgColor
-        searchText.layer.borderWidth = borderWidthOFTextView
+        searchText.layer.borderColor = UIConstant.borderColorOfTextView.cgColor
+        searchText.layer.borderWidth = UIConstant.borderWidthOFTextView
         searchResult.delegate = self
         searchResult.dataSource = self
         ApplicationManager.sharedInstance.gotCurrentITunesEntity = gotCurrentITunesEntity
@@ -53,7 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if let data = try? Data(contentsOf: url) {
                     DispatchQueue.main.async {
                         cell.picture.image = UIImage(data: data)!
-}
+                    }
                 } else {
                     DispatchQueue.main.async {
                         cell.picture.image = UIImage(named: "defaultImage")
@@ -72,7 +63,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         let currentText: NSString = textView.text! as NSString
         let newText: NSString = currentText.replacingCharacters(in: range, with: text) as NSString
-        return newText.length <= maxQueryLength
+        return newText.length <= UIConstant.maxQueryLength
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,24 +76,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func showAlert(error: Error) {
+        
+        
         var messageError = ""
-        var actions: [UIAlertAction] = [UIAlertAction(title: okALertAction, style: .default, handler: nil)]
-
+        var actions: [UIAlertAction] = [UIAlertAction(title: UIConstant.okALertAction, style: .default, handler: nil)]
+        
         switch error {
-        case ErrorList.noInternetConnection:
-            messageError = noInternetMessage
-            actions.append(UIAlertAction(title: tryAgainAlertAction, style: .default, handler: {
+        case APIError.noInternetConnection:
+            messageError = UIConstant.noInternetMessage
+            actions.append(UIAlertAction(title: UIConstant.tryAgainAlertAction, style: .default, handler: {
                 action in
                 ApplicationManager.sharedInstance.start(queryTerm: self.searchText.text!)
             }))
-        case ErrorList.invalidJSON:
-            messageError = invalidJSONMessage
-        case ErrorList.unexpectedJSONContent:
-            messageError = unexpectedJSONContentMessage
+        case JSONParsingError.invalidJSON:
+            messageError = UIConstant.invalidJSONMessage
+        case JSONParsingError.unexpectedJSONContent:
+            messageError = UIConstant.unexpectedJSONContentMessage
         default:
             messageError = "\(error.localizedDescription)"
         }
-        let alert = UIAlertController(title: titleAlert, message: messageError, preferredStyle: .alert)
+        let alert = UIAlertController(title: UIConstant.titleAlert, message: messageError, preferredStyle: .alert)
         for action in actions {
             alert.addAction(action)
         }

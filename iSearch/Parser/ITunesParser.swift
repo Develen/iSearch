@@ -1,10 +1,6 @@
 import Foundation
 
 class ITunesParser {
-    private static let iTunesResultKey = "results"
-    private static let firstITunesKeyToFillResult = "trackName"
-    private static let secondITunesKeyToFillResult = "artworkUrl60"
-    private static let thirdITunesKeyToFillResult = "artistName"
     
     static func parseJSON(json: Data) throws -> [ITunesEntity] {
         var iTunesEntity: NSDictionary?
@@ -12,7 +8,7 @@ class ITunesParser {
         do {
             iTunesEntity = try JSONSerialization.jsonObject(with: json, options: []) as? NSDictionary
         } catch {
-            throw ErrorList.invalidJSON
+            throw JSONParsingError.invalidJSON
         }
         return try parseITunesEntity(content: iTunesEntity!)
     }
@@ -20,13 +16,13 @@ class ITunesParser {
     private static func parseITunesEntity(content: NSDictionary) throws -> [ITunesEntity] {
         var iTunesEntity: [ITunesEntity] = []
         
-        guard let iTunesContent = content[ITunesParser.iTunesResultKey] as? [NSDictionary] else {
-            throw ErrorList.unexpectedJSONContent
+        guard let iTunesContent = content[JSONParsingConstant.iTunesResultKey] as? [NSDictionary] else {
+            throw JSONParsingError.unexpectedJSONContent
         }
         for oneContent in iTunesContent {
-            guard let trackName = oneContent[ITunesParser.firstITunesKeyToFillResult],
-                let image = oneContent[ITunesParser.secondITunesKeyToFillResult],
-                let artistName = oneContent[ITunesParser.thirdITunesKeyToFillResult] else {
+            guard let trackName = oneContent[JSONParsingConstant.firstITunesKeyToFillResult],
+                let image = oneContent[JSONParsingConstant.secondITunesKeyToFillResult],
+                let artistName = oneContent[JSONParsingConstant.thirdITunesKeyToFillResult] else {
                     continue
                     //TODO: log error massage
             }

@@ -1,0 +1,6 @@
+"alertTitle" = "Oops!";
+"okAction" = "OK";
+"tryAgainAction" = "Try again";
+"noInternetConection" = "No internet connection";
+"invalidJSON" = "Invalid JSON";
+"unexpectedJSONContent" = "Unexpected JSON Content";

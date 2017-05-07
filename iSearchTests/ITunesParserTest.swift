@@ -3,7 +3,7 @@ import XCTest
 
 class ITunesParserTest: XCTestCase {
     
-    func test_validJSONWithThreeEntities() throws {
+    func test_validJSONWithThreeEntitiesResultThreeEntity() throws {
         var entities: [ITunesEntity]? = nil
         var error : Error? = nil
         let data = try readFileContent(name: "validJSON_ThreeEntities", fileExtension: "json")
@@ -34,7 +34,7 @@ class ITunesParserTest: XCTestCase {
         } catch let currentError as NSError {
             error = currentError
         }
-        XCTAssert(error as? ErrorList == ErrorList.invalidJSON , "invalid JSON content")
+        XCTAssert(error as? JSONParsingError == JSONParsingError.invalidJSON , "invalid JSON content")
     }
     
     func test_invalidJSONParentContentThrowErrorUnexpectedJSONContent() throws {
@@ -46,7 +46,7 @@ class ITunesParserTest: XCTestCase {
         } catch let currentError as NSError {
             error = currentError
         }
-        XCTAssert(error as? ErrorList == ErrorList.unexpectedJSONContent , "no parent to parse JSON in NSDictionary")
+        XCTAssert(error as? JSONParsingError == JSONParsingError.unexpectedJSONContent , "no parent to parse JSON in NSDictionary")
     }
     
     func test_invalidJSONContentReturnEmptyArrayOfITunesEntity() throws {
@@ -81,23 +81,9 @@ class ITunesParserTest: XCTestCase {
         super.tearDown()
     }
     
-    func testEx2 ()
-    {
-        //Arrange
-        
-        
-        //Act
-        
-        
-        //Assert
-        
-    }
-    
     func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+               self.measure {
+                   }
     }
     
 }
