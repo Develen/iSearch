@@ -3,7 +3,7 @@ import XCTest
 
 class ITunesParserTest: XCTestCase {
     
-    func test_validJSONWithThreeEntitiesResultThreeEntity() throws {
+    func test_parseJSON_validJSONWithThreeEntities_ThreeEntity() throws {
         var entities: [ITunesEntity]? = nil
         var error : Error? = nil
         let data = try readFileContent(name: "validJSON_ThreeEntities", fileExtension: "json")
@@ -25,7 +25,7 @@ class ITunesParserTest: XCTestCase {
         XCTAssert(entities?[2].image == "ImageURL3", "right image string url of third entity")
     }
     
-    func test_invalidJSONFormatThrowErrorInvalidJSON() throws {
+    func test_parseJSON_invalidJSONFormat_ThrowErrorInvalidJSON() throws {
         var entities: [ITunesEntity]? = nil
         var error : Error? = nil
         let data = try readFileContent(name: "invalidJSON", fileExtension: "json")
@@ -37,7 +37,7 @@ class ITunesParserTest: XCTestCase {
         XCTAssert(error as? JSONParsingError == JSONParsingError.invalidJSON , "invalid JSON content")
     }
     
-    func test_invalidJSONParentContentThrowErrorUnexpectedJSONContent() throws {
+    func test_parseJSON_invalidJSONParentContent_ThrowErrorUnexpectedJSONContent() throws {
         var entities: [ITunesEntity]? = nil
         var error : Error? = nil
         let data = try readFileContent(name: "invalidJSONParentContent", fileExtension: "json")
@@ -46,13 +46,13 @@ class ITunesParserTest: XCTestCase {
         } catch let currentError as NSError {
             error = currentError
         }
-        XCTAssert(error as? JSONParsingError == JSONParsingError.unexpectedJSONContent , "no parent to parse JSON in NSDictionary")
+        XCTAssert(error as? JSONParsingError == JSONParsingError.unexpectedJSONContent , "error unexpected JSON content")
     }
     
-    func test_invalidJSONContentReturnEmptyArrayOfITunesEntity() throws {
+    func test_parseJSON_invalidJSONContent_EmptyArrayOfITunesEntity() throws {
         var entities: [ITunesEntity]? = nil
         var error : Error? = nil
-        let data = try readFileContent(name: "incorrectJSONTORecoeveSearchResult", fileExtension: "json")
+        let data = try readFileContent(name: "incorrectJSONToRecieveSearchResult", fileExtension: "json")
         do {
             entities = try ITunesParser.parseJSON(json: data as Data)
         } catch let currentError as NSError {
@@ -70,20 +70,12 @@ class ITunesParserTest: XCTestCase {
         return try NSData(contentsOfFile: correctPath)
     }
     
-    
     override func setUp() {
         super.setUp()
         
     }
     
     override func tearDown() {
-        
         super.tearDown()
     }
-    
-    func testPerformanceExample() {
-               self.measure {
-                   }
-    }
-    
 }

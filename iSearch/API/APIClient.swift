@@ -34,12 +34,23 @@ extension APIClient {
         let task = dataTaskWithRequest(request: request) {
             (json, response, error) in
             DispatchQueue.main.async {
+                
                 guard response != nil else {
-                    completion(APIResult.failure(APIError.noInternetConnection))
+                    if error == nil {
+                        completion(APIResult.failure(APIError.unhandledAPIError))
+                        return
+                    }
+                    completion(APIResult.failure(error!))
                     return
                 }
+                
+                if let error = error {
+                     completion(APIResult.failure(error))
+                    return
+                }
+
                 guard let json = json else {
-                    completion(APIResult.failure(error!))
+                    completion(APIResult.failure(APIError.unhandledAPIError))
                     return
                 }
                 do {

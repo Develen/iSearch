@@ -1,6 +1,6 @@
 "alertTitle" = "Ошибка!";
 "okAction" = "ОК";
 "tryAgainAction" = "Повтор";
-"noInternetConection" = "Нет подключения к интернету, проверьте соединение";
 "invalidJSON" = "некорректный JSON формат";
+"webserviceError" = "Ошибка при запросе Веб-сервиса iTunes";
 "unexpectedJSONContent" = "Невозможно получить данные из JSON";

@@ -2,7 +2,7 @@
     "resultCount": 3,
     "results":    [
                    {
-                   "artistName": "Name1",
+                   "artitName": "Name1",
                    "trackName": "Track1",
                    "artworkUrl60": "ImageURL1",
                    "someOtherField": 6.99
@@ -10,14 +10,14 @@
                    },
                    {
                    
-                   "artistName": "Name2",
+                   "artitName": "Name2",
                    "trackName": "Track2",
                    "artworkUrl60": "ImageURL2",
                    "someOtherField": "Rock"
                    },
                    {
                    
-                   "artistName": "Name3",
+                   "artitName": "Name3",
                    "trackName": "Track3",
                    "artworkUrl60": "ImageURL3",
                    "someOtherField": "Rock"

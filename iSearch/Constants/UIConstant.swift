@@ -8,7 +8,7 @@ class UIConstant {
     static let titleAlert = NSLocalizedString("alertTitle", comment: "")
     static let okALertAction = NSLocalizedString("okAction", comment: "")
     static let tryAgainAlertAction = NSLocalizedString("tryAgainAction", comment: "")
-    static let noInternetMessage = NSLocalizedString("noInternetConection", comment: "")
+    static let webserviceError = NSLocalizedString("webserviceError", comment: "")
     static let invalidJSONMessage = NSLocalizedString("invalidJSON", comment: "")
     static let unexpectedJSONContentMessage = NSLocalizedString("unexpectedJSONContent", comment: "")
 }

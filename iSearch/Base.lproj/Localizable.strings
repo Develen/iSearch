@@ -1,6 +1,6 @@
 "alertTitle" = "Oops!";
 "okAction" = "OK";
 "tryAgainAction" = "Try again";
-"noInternetConection" = "No internet connection";
 "invalidJSON" = "Invalid JSON";
+"webserviceError" = "Error on calling iTunes web service";
 "unexpectedJSONContent" = "Unexpected JSON Content";

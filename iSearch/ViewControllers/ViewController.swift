@@ -82,8 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var actions: [UIAlertAction] = [UIAlertAction(title: UIConstant.okALertAction, style: .default, handler: nil)]
         
         switch error {
-        case APIError.noInternetConnection:
-            messageError = UIConstant.noInternetMessage
+        case APIError.unhandledAPIError:
+            messageError =  UIConstant.webserviceError
             actions.append(UIAlertAction(title: UIConstant.tryAgainAlertAction, style: .default, handler: {
                 action in
                 ApplicationManager.sharedInstance.start(queryTerm: self.searchText.text!)
@@ -92,6 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             messageError = UIConstant.invalidJSONMessage
         case JSONParsingError.unexpectedJSONContent:
             messageError = UIConstant.unexpectedJSONContentMessage
+            
         default:
             messageError = "\(error.localizedDescription)"
         }
